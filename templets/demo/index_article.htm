@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<script src="/style/js/jquery2.2.3.min.js"></script>
+<link href="/style/css/bootstrap.min.css" rel="stylesheet">
+<link href="/style/css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/style/js/html5shiv.min.js"></script>
+<script src="/style/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+<div class="banner">
+  <div class="container"> </div>
+</div>
+<div class="submenu container">
+  <ul>
+    {dede:channel type='son' currentstyle="<li><a href='~typelink~' class='hover'>~typename~</a></li>"}
+    <li><a href="[field:typelink/]">[field:typename/]</a></li>
+    {/dede:channel}
+  </ul>
+</div>
+<div class="container content">
+  {dede:field.content/}
+</div>
+{dede:include filename="foot.htm"/}
+</body>
+</html>

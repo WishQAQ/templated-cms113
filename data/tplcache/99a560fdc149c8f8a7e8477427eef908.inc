@@ -1,0 +1,1 @@
+<div class="slide" style="background: url([field:litpic/]) center/cover;"></div>

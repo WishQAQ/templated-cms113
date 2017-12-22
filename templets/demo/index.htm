@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<script src="/style/js/jquery.min.js"></script>
+<link href="/style/css/bootstrap.min.css" rel="stylesheet">
+<link href="/style/css/jquery.fullPage.css" rel="stylesheet">
+<link href="/style/css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/style/js/html5shiv.min.js"></script>
+<script src="/style/js/respond.min.js"></script>
+<![endif]-->
+<script>
+$(function(){
+	if($.browser.msie && $.browser.version < 10){
+		$('body').addClass('ltie10');
+	}
+    $('#dowebok').fullpage({
+    	slidesNavigation:true,
+    	navigation:true,
+    	navigationTooltips: ['首页', '关于', '产品', '案例', '新闻', '营销网络', '联系我们']
+    });
+    setInterval(function(){
+        $.fn.fullpage.moveSlideRight();
+    }, 30000);
+});
+</script>
+</head>
+<body>
+<div id="dowebok">
+  <div class="section">
+    {dede:arclist row='5' titlelen='36' typeid='17'}
+    <div class="slide" style="background: url([field:litpic/]) center/cover;"></div>
+    {/dede:arclist}
+    <div class="side"> <a href="/"><img src="/style/images/logo.jpg" alt="" class="logo"></a>
+      <div class="side_bg">
+        <ul class="side_nav">
+          <li> <a href="/">
+            <p>网站首页</p>
+            <span>HOME</span> </a> </li>
+          {dede:channel type='top' row='10'}
+          <li> <a href="[field:typeurl/]">
+            <p>[field:typename/]</p>
+            <span>[field:seotitle/]</span> </a> </li>
+          {/dede:channel}
+        </ul>
+        <img src="/style/images/ewm.jpg" alt="" class="side_ewm" width="120">
+        <p class="copy">{dede:global.cfg_powerby/} {dede:global.cfg_beian/}  技术支持：<a href="//zhanoo.com" target="_blank">站窝窝</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="section section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 abimg"> <img src="/style/images/ab.png" alt="" class="img-responsive"> </div>
+        <div class="col-sm-12 col-md-9 abright"> <img src="/style/images/about.jpg" alt="" class="img-responsive">
+          <div class="abtext">
+            {dede:sql sql="select content from dede_arctype where id=1"}[field:content function=cn_substr(Html2Text(@me),900)/]{/dede:sql}
+          </div>
+          <div class="ab_menu row">
+            <div class="col-xs-4 ab1">{dede:type typeid='2'}<a href="[field:typelink /]"><img src="/style/images/ab1.png" alt="" class="img-responsive"></a>{/dede:type}</div>
+            <div class="col-xs-4 ab2">{dede:type typeid='3'}<a href="[field:typelink /]"><img src="/style/images/ab2.png" alt="" class="img-responsive"></a>{/dede:type}</div>
+            <div class="col-xs-4 ab3">{dede:type typeid='4'}<a href="[field:typelink /]"><img src="/style/images/ab3.png" alt="" class="img-responsive"></a>{/dede:type}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section3">
+    <div class="container">
+      <div class="row protit">
+        <div class="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"> <img src="/style/images/protit.png" alt="" class="img-responsive"> </div>
+      </div>
+      <div class="row product">
+        <div class="col-xs-4"> <img src="/style/images/p1.png" alt="" class="img-responsive">
+          <div class="probg">
+           {dede:type typeid='6'} <h2>[field:typename /]</h2>
+            <span>Fiberglass series</span> <i></i>
+            <p>保证所生产的产品<br>
+              具有良好的外观质量和精准的<br>
+              规格尺寸 </p>
+            <a href="[field:typelink /]" class="more">READ MORE</a> {/dede:type}</div>
+        </div>
+        <div class="col-xs-4"> <img src="/style/images/p2.png" alt="" class="img-responsive">
+          <div class="probg">
+           {dede:type typeid='7'} <h2>[field:typename /]</h2>
+            <span>Rock series</span> <i></i>
+            <p>保证所生产的产品<br>
+              具有良好的外观质量和精准的<br>
+              规格尺寸 </p>
+            <a href="[field:typelink /]" class="more">READ MORE</a>{/dede:type} </div>
+        </div>
+        <div class="col-xs-4"> <img src="/style/images/p3.png" alt="" class="img-responsive">
+          <div class="probg">
+            {dede:type typeid='8'}<h2>[field:typename /]</h2>
+            <span>Fiberglass mat series</span> <i></i>
+            <p>保证所生产的产品<br>
+              具有良好的外观质量和精准的<br>
+              规格尺寸 </p>
+            <a href="[field:typelink /]" class="more">READ MORE</a> {/dede:type}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section4">
+    <div class="container">
+      <div class="row casetit">
+        <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3"> <img src="/style/images/casetit.png" alt="" class="img-responsive"> </div>
+      </div>
+      <div class="row case_p">
+        <div class="col-xs-8 col-xs-offset-2">
+          <p>近二十年来曾多次被授予“守合同、重信用企业”、“外贸出口明星企业”、安全生产先进工作单位、企业管理先进单位等多项荣誉。</p>
+        </div>
+      </div>
+      <div class="row case_img">
+        <div class="col-sm-10 col-sm-offset-1 col-xs-12">{dede:type typeid='11'}<a href="[field:typelink /]"><img src="/style/images/case.png" alt="" class="img-responsive"></a>{/dede:type}</div>
+      </div>
+    </div>
+  </div>
+  <div class="section section5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 newtit col-sm-2 col-xs-4"><img src="/style/images/new.png" alt="" class="img-responsive"></div>
+        <div class="col-md-2 newimg"><img src="/style/images/nn.png" alt="" class="img-responsive"></div>
+        <div class="col-md-8 news col-sm-10 col-xs-8">
+          {dede:arclist row='3' titlelen='60' typeid='12'}
+          <div class="media media[field:global name=autoindex runphp="yes"]@me=@me;[/field:global]">
+            <div class="media-left media-middle"> <a href="[field:arcurl/]"> [field:global name=autoindex runphp="yes"]@me=@me;[/field:global] </a> </div>
+            <div class="media-body"> <a href="[field:arcurl/]" class="media-heading">[field:title/]</a>
+              <p>　　[field:description function='cn_substr(@me,250)'/]...</p>
+            </div>
+          </div>
+          {/dede:arclist}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section6">
+    <div class="container">
+      <div class="row network">
+        <div class="col-sm-7 netimg"> <img src="/style/images/net.png" alt="" class="img-responsive"> </div>
+        <div class="col-sm-5 nettext col-xs-12 nettext"> <img src="/style/images/network.png" alt="" class="img-responsive">
+          <p>公司生产的产品以其卓越的性能和高雅的品位畅销国内外，被评为山东省著名商标。我公司拥有自己的出口权，公司年产能力500万平方米，公司90%以上产品畅销欧美，中东，非洲、东南亚等国家和地区。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section7">
+    <div class="index_cont"> <span>联系我们</span>
+      <p> 免费服务热线：{dede:global.cfg_dh/} <br>
+        传真：{dede:global.cfg_cz/} <br>
+        邮编：{dede:global.cfg_yb/} <br>
+        邮箱：{dede:global.cfg_yx/} <br>
+        地址：{dede:global.cfg_dz/} </p>
+    </div>
+    <div class="index_bottom"> {dede:global.cfg_powerby/} <a href="http://www.miitbeian.gov.cn" target="_blank"> {dede:global.cfg_beian/}</a> 技术支持：<a href="//zhanoo.com" target="_blank">站窝窝</a> </div>
+  </div>
+</div>
+<script src="/style/js/bootstrap.min.js"></script> 
+<script src="/style/js/jquery.fullPage.min.js"></script>
+</body>
+</html>

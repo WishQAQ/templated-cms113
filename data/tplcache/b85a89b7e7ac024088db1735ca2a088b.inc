@@ -1,0 +1,1 @@
+<a href="[field:typelink /]"><img src="/style/images/case.png" alt="" class="img-responsive"></a>
